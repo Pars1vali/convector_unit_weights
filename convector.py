@@ -4,15 +4,15 @@ import pandas as pd #библиотека для ссоздания таблиц
 #метод определяющий какой метод для перевода нужно использовать в завимисомти от типа исходного ззначения
 def distribution_unit(unit_name, value):
     df = None #таблица для записи значения
-    if unit_name == 'kg':
-        df = convert_weight_kg(value)
-    elif unit_name == 'gr':
-        df = convert_weight_grams(value)
-    elif unit_name == 'lb':
-        df = convert_weight_pounds(value)
-    elif unit_name == 'oz':
-        df = convert_weight_ounces(value)
-
+    match unit_name:
+        case 'kg':
+            df = convert_weight_kg(value)
+        case 'gr':
+            df = convert_weight_grams(value)
+        case 'lb':
+            df = convert_weight_pounds(value)
+        case 'oz':
+            df = convert_weight_ounces(value)
     return df
 
 #метод для перевода кг в другие единицы измерения
