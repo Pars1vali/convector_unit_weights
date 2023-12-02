@@ -39,7 +39,8 @@ value = st.number_input("Введеите значение ", 0)
 
 btn = st.button("Перевести",type="primary")
 if btn:
-    match st.session_state.unit:
+    unit = st.session_state.unit
+    match unit:
         case 'kg':
             st.write(f"{value} кг -")
             show_result(cvt.convert_weight_kg(value))
