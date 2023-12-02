@@ -1,5 +1,5 @@
 import streamlit as st
-import covector as cvt
+import convector as cvt
 
 def local_css(file_name):
     with open(file_name) as f:
@@ -41,10 +41,12 @@ def init():
     btn = st.button("Перевести",type="primary")
     if btn:
         unit = st.session_state.unit
+        st.write(f"{value} {unit} -")
+        show_result(cvt.distribution_unit(unit, value))
 
-        if unit == "kg":
-            st.write(f"{value} кг -")
-            show_result(cvt.convert_weight_kg(value))
+        # if unit == "kg":
+        #     st.write(f"{value} кг -")
+        #     show_result(cvt.convert_weight_kg(value))
 
         # match st.session_state.unit:
         #     case 'kg':

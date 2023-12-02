@@ -1,4 +1,17 @@
 import pandas as pd
+
+def distribution_unit(unit_name, value):
+    df = None
+    match unit_name:
+        case 'kg':
+            df = convert_weight_kg(value)
+        case 'gr':
+            df = convert_weight_grams(value)
+        case 'lb':
+            df = convert_weight_pounds(value)
+        case 'oz':
+            df = convert_weight_ounces(value)
+    return df
 def convert_weight_kg(weight_in_kg):
     # Конвертация в граммы
     weight_grams = weight_in_kg * 1000
