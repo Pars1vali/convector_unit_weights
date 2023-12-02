@@ -12,7 +12,6 @@ def distribution_unit(unit_name, value):
         df = convert_weight_ounces(value)
 
     return df
-
 def convert_weight_kg(weight_in_kg):
     # Конвертация в граммы
     weight_grams = weight_in_kg * 1000
