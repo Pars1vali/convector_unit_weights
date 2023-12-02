@@ -8,7 +8,7 @@ def local_css(file_name):
 def show_result(df):
     c1, c2, c3 = st.columns(3)
     with c2:
-        st.dataframe(df, hide_index = True, width = 450)
+        st.dataframe(df, hide_index = True, width = 400)
 def init():
     local_css("style.css")
 
