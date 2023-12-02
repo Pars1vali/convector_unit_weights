@@ -8,7 +8,7 @@ def distribution_unit(unit_name, value):
         df = convert_weight_grams(value)
     elif unit_name == 'lb':
         df = convert_weight_pounds(value)
-    elif unit_name == '':
+    elif unit_name == 'oz':
         df = convert_weight_ounces(value)
 
     return df
@@ -39,19 +39,6 @@ def convert_weight_grams(weight_in_grams):
     df = pd.DataFrame({'Единица измерения': ['Килограммы', 'Унции', 'Фунты'],
                        'Значение': [weight_in_kg, weight_in_ounces, weight_in_pounds]})
     return df
-def convert_weight_ounces(weight_in_ounces):
-    # Перевод из унций в килограммы
-    weight_in_kg = weight_in_ounces * 0.0283495
-
-    # Перевод   из унций   из граммы
-    weight_in_grams = weight_in_ounces * 28.3495
-
-    # Перевод из унций в фунты
-    weight_in_pounds = weight_in_ounces * 0.0625
-
-    df = pd.DataFrame({'Единица измерения': ['Килограммы', 'Граммы', 'Фунты'],
-                       'Значение': [weight_in_kg, weight_in_grams, weight_in_pounds]})
-    return df
 def convert_weight_pounds(weight_in_pounds):
     # Перевод из унций в килограммы
     weight_in_kg = weight_in_pounds * 0.453592
@@ -64,4 +51,17 @@ def convert_weight_pounds(weight_in_pounds):
 
     df = pd.DataFrame({'Единица измерения': ['Килограммы', 'Граммы', 'Унции'],
                        'Значение': [weight_in_kg, weight_in_grams, weight_in_ounces]})
+    return df
+def convert_weight_ounces(weight_in_ounces):
+    # Перевод из унций в килограммы
+    weight_in_kg = weight_in_ounces * 0.0283495
+
+    # Перевод   из унций   из граммы
+    weight_in_grams = weight_in_ounces * 28.3495
+
+    # Перевод из унций в фунты
+    weight_in_pounds = weight_in_ounces * 0.0625
+
+    df = pd.DataFrame({'Единица измерения': ['Килограммы', 'Граммы', 'Фунты'],
+                       'Значение': [weight_in_kg, weight_in_grams, weight_in_pounds]})
     return df

@@ -41,28 +41,11 @@ def init():
     btn = st.button("Перевести",type="primary")
     if btn:
         unit = st.session_state.unit
-        st.write(f"{value} {unit} -")
-        show_result(cvt.distribution_unit(unit, value))
-
-        # if unit == "kg":
-        #     st.write(f"{value} кг -")
-        #     show_result(cvt.convert_weight_kg(value))
-
-        # match st.session_state.unit:
-        #     case 'kg':
-        #         st.write(f"{value} кг -")
-        #         show_result(cvt.convert_weight_kg(value))
-        #     case 'gr':
-        #         st.write(f"{value} грамм -")
-        #         show_result(cvt.convert_weight_grams(value))
-        #     case 'lb':
-        #         st.write(f"{value} фунтов -")
-        #         show_result(cvt.convert_weight_pounds(value))
-        #     case 'oz':
-        #         st.write(f"{value} унций -")
-        #         show_result(cvt.convert_weight_ounces(value))
-        #     case 'none':
-        #         st.warning("Выберете единицу веса измрения исходного значения", icon="⚠️")
+        if unit == 'none':
+            st.warning("Выберете единицу веса измрения исходного значения", icon="⚠️")
+        else:
+            st.write(f"{value} {unit} -")
+            show_result(cvt.distribution_unit(unit, value))
 
 
 if __name__ == "__main__":
