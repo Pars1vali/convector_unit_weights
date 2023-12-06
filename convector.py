@@ -24,7 +24,7 @@ def convert_weight_kg(weight_in_kg):
     weight_ounces = weight_in_kg * 35.27396
 
     # Конвертация в фунты
-    weight_pounds = weight_in_kg * 2,20462
+    weight_pounds = weight_in_kg * 2.20462
 
     df = pd.DataFrame({'Единица измерения': ['Граммы', 'Унции', 'Фунты'],
                        'Значение': [weight_grams, weight_ounces, weight_pounds]})
