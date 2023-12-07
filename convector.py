@@ -51,7 +51,7 @@ def convert_weight_pounds(weight_in_pounds):
     weight_in_kg = round(weight_in_pounds * 0.453592,2)
 
     # Перевод  из унций   из граммы
-    weight_in_grams = round(weight_in_pounds * 453.592)
+    weight_in_grams = round(weight_in_pounds * 453.5925,2)
 
     # Перевод из унций в фунты
     weight_in_ounces = round(weight_in_pounds * 16,2)
@@ -66,7 +66,7 @@ def convert_weight_ounces(weight_in_ounces):
     weight_in_kg = round(weight_in_ounces * 0.0283495,2)
 
     # Перевод   из унций   из граммы
-    weight_in_grams = round(weight_in_ounces * 28.3495)
+    weight_in_grams = round(weight_in_ounces * 28.3495,2)
 
     # Перевод из унций в фунты
     weight_in_pounds = round(weight_in_ounces * 0.0625,2)
