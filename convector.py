@@ -18,13 +18,13 @@ def distribution_unit(unit_name, value):
 #метод для перевода кг в другие единицы измерения
 def convert_weight_kg(weight_in_kg):
     # Конвертация в граммы
-    weight_grams = weight_in_kg * 1000
+    weight_grams = round(weight_in_kg * 1000)
 
     # Конвертация в унции
-    weight_ounces = weight_in_kg * 35.27396
+    weight_ounces = round(weight_in_kg * 35.27396,2)
 
     # Конвертация в фунты
-    weight_pounds = weight_in_kg * 2.20462
+    weight_pounds = round(weight_in_kg * 2.20462,2)
 
     df = pd.DataFrame({'Единица измерения': ['Граммы', 'Унции', 'Фунты'],
                        'Значение': [weight_grams, weight_ounces, weight_pounds]})
@@ -33,13 +33,13 @@ def convert_weight_kg(weight_in_kg):
 #метод для перевода грамм в другие единицы измерения
 def convert_weight_grams(weight_in_grams):
     # Перевод из грамм в килограммы
-    weight_in_kg = weight_in_grams / 1000.0
+    weight_in_kg = round(weight_in_grams / 1000.0,2)
 
     # Перевод из грамм в унции (1 грамм = 0.03527396 унции)
-    weight_in_ounces = weight_in_grams * 0.03527396
+    weight_in_ounces = round(weight_in_grams * 0.03527396,2)
 
     # Перевод из грамм в фунты (1 грамм = 0.00220462 фунта)
-    weight_in_pounds = weight_in_grams * 0.00220462
+    weight_in_pounds = round(weight_in_grams * 0.00220462,2)
 
     df = pd.DataFrame({'Единица измерения': ['Килограммы', 'Унции', 'Фунты'],
                        'Значение': [weight_in_kg, weight_in_ounces, weight_in_pounds]})
@@ -48,13 +48,13 @@ def convert_weight_grams(weight_in_grams):
 #метод для перевода фунтов в другие единицы измерения
 def convert_weight_pounds(weight_in_pounds):
     # Перевод из унций в килограммы
-    weight_in_kg = weight_in_pounds * 0.453592
+    weight_in_kg = round(weight_in_pounds * 0.453592,2)
 
     # Перевод  из унций   из граммы
-    weight_in_grams = weight_in_pounds * 453.592
+    weight_in_grams = round(weight_in_pounds * 453.592)
 
     # Перевод из унций в фунты
-    weight_in_ounces = weight_in_pounds * 16
+    weight_in_ounces = round(weight_in_pounds * 16,2)
 
     df = pd.DataFrame({'Единица измерения': ['Килограммы', 'Граммы', 'Унции'],
                        'Значение': [weight_in_kg, weight_in_grams, weight_in_ounces]})
@@ -63,13 +63,13 @@ def convert_weight_pounds(weight_in_pounds):
 #метод для перевода унции в другие единицы измерения
 def convert_weight_ounces(weight_in_ounces):
     # Перевод из унций в килограммы
-    weight_in_kg = weight_in_ounces * 0.0283495
+    weight_in_kg = round(weight_in_ounces * 0.0283495,2)
 
     # Перевод   из унций   из граммы
-    weight_in_grams = weight_in_ounces * 28.3495
+    weight_in_grams = round(weight_in_ounces * 28.3495)
 
     # Перевод из унций в фунты
-    weight_in_pounds = weight_in_ounces * 0.0625
+    weight_in_pounds = round(weight_in_ounces * 0.0625,2)
 
     df = pd.DataFrame({'Единица измерения': ['Килограммы', 'Граммы', 'Фунты'],
                        'Значение': [weight_in_kg, weight_in_grams, weight_in_pounds]})
