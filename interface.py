@@ -5,7 +5,7 @@ import convector as cvt
 def local_css(file_name):
     with open(file_name) as f:
         st.markdown('<style>{}</style>'.format(f.read()), unsafe_allow_html=True)
-
+@st.cache_data
 def show_result(df):
     c1, c2, c3 = st.columns(3)
     with c2:
